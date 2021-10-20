@@ -1,4 +1,6 @@
-from py5paisa import FivePaisaClient
+print("ok")
+
+"""from py5paisa import FivePaisaClient
 from py5paisa.order import Order, OrderType, Exchange
 cred={
     "APP_NAME":"5P56685593",
@@ -15,3 +17,4 @@ client.login()
 
 test_order = Order(order_type='B',exchange='N',exchange_segment='D', scrip_code = 37848, quantity=50, price=236.5,is_intraday=True)
 client.place_order(test_order)
+"""
