@@ -47,7 +47,9 @@ def webhook():
     print(request.data)
     data = json.loads(request.data)
 
-    OrderType = data['order_type']
+    OrderType = "S"
+    if data['order_type'] == "buy":
+        OrderType = "B"
     Exchange = data['exchange']
     ExchangeSegment = data['exchange_segment']
     ScripCode = data['scrip_code']
