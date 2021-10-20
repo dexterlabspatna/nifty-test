@@ -68,8 +68,8 @@ def webhook():
     print(order_response)
 
     return{
-        "code": "error",
-        "message": "order"
+        "code": "success",
+        "message": "order Executed"
     }
 
 #test_order = Order(order_type='B',exchange='N',exchange_segment='D', scrip_code = 37848, quantity=50, price=236.5,is_intraday=True)
