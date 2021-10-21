@@ -19,7 +19,7 @@ client.login()
 def order(OrderType, Exchange, ExchangeSegment, ScripCode, Quantity, Price, IsIntraday):
     try:
         print("sending order")
-        order = Order(at_market=1, order_type=OrderType,exchange=Exchange,exchange_segment=ExchangeSegment, scrip_code = ScripCode, quantity=Quantity, price=Price,is_intraday=IsIntraday)
+        order = Order(atmarket=true, order_type=OrderType,exchange=Exchange,exchange_segment=ExchangeSegment, scrip_code = ScripCode, quantity=Quantity, price=Price,is_intraday=IsIntraday)
         place_order = client.place_order(order)
         print(place_order)
     except Exception as e:
