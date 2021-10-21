@@ -18,10 +18,11 @@ client.login()
 
 def order(OrderType, Exchange, ExchangeSegment, ScripCode, Quantity, Price, IsIntraday):
     try:
-        print("sending order")
-        order = bo_co_order(scrip_code = ScripCode, BuySell=OrderType, Qty=1, ExchType='D', Exch='N', RequestType='P', AtMarket=True)
-        #order = Order(atmarket=True, order_type=OrderType,exchange=Exchange,exchange_segment=ExchangeSegment, scrip_code = ScripCode, quantity=Quantity, price=Price,is_intraday=IsIntraday)
-        place_order = client.bo_order(order)
+        #print("sending order")
+        #order = bo_co_order(scrip_code = ScripCode, BuySell=OrderType, Qty=1, ExchType='D', Exch='N', RequestType='P', AtMarket=True)
+        #place_order = client.bo_order(order)
+        order = Order(AtMarket=True, order_type=OrderType,exchange=Exchange,exchange_segment=ExchangeSegment, scrip_code = ScripCode, quantity=Quantity, price=Price,is_intraday=IsIntraday)
+        place_order = client.place_order(order)
         print(place_order)
     except Exception as e:
         print("an exception occured - {}".format(e))
@@ -57,7 +58,7 @@ def webhook():
     Quantity = data['quantity']
     Price = data['price']
     IsIntraday = data['is_intraday']
-    print(OrderType)
+    #print(OrderType)
     """
     side = data['strategy']['order_action'].upper()
     tick = data['ticker']
@@ -66,7 +67,7 @@ def webhook():
     """
     order_response = order(OrderType, Exchange, ExchangeSegment, ScripCode, Quantity, Price, IsIntraday)
 
-    print(order_response)
+    #print(order_response)
 
     return{
         "code": "success",
