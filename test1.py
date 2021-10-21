@@ -21,7 +21,7 @@ def order(OrderType, Exchange, ExchangeSegment, ScripCode, Quantity, Price, IsIn
         #print("sending order")
         #order = bo_co_order(scrip_code = ScripCode, BuySell=OrderType, Qty=1, ExchType='D', Exch='N', RequestType='P', AtMarket=True)
         #place_order = client.bo_order(order)
-        order = Order(At_Market=1, order_type=OrderType,exchange=Exchange,exchange_segment=ExchangeSegment, scrip_code = ScripCode, quantity=Quantity, price=Price,is_intraday=IsIntraday)
+        order = Order(atmarket=True, order_type=OrderType,exchange=Exchange,exchange_segment=ExchangeSegment, scrip_code = ScripCode, quantity=Quantity, price=Price,is_intraday=IsIntraday)
         place_order = client.place_order(order)
         print(place_order)
     except Exception as e:
