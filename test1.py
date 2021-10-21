@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 app = Flask(__name__)
 from py5paisa import FivePaisaClient
-from py5paisa.order import Order, OrderType, Exchange
+from py5paisa.order import *
 import json
 
 cred={
